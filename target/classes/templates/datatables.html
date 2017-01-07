@@ -48,7 +48,7 @@
 
             <!-- breadcrumb -->
             <ol class="breadcrumb">
-                <li>Home</li><li>Tables</li><li>Data Tables</li>
+                <li>首页</li><li>表单</li><li>分析数据 表单</li>
             </ol>
             <!-- end breadcrumb -->
 
@@ -1109,12 +1109,12 @@
                 
                                         <thead>
                                             <tr>
-                                                <th class="hasinput" style="width:17%">
-                                                    <input type="text" class="form-control" placeholder="Filter Name" />
+                                                <th class="hasinput" style="width:10%">
+                                                    <input type="text" class="form-control" placeholder="ID" />
                                                 </th>
-                                                <th class="hasinput" style="width:18%">
+                                                <th class="hasinput" style="width:20%">
                                                     <div class="input-group">
-                                                        <input class="form-control" placeholder="Filter Position" type="text"/>
+                                                        <input class="form-control" placeholder="数据类型" type="text"/>
                                                         <span class="input-group-addon">
                                                             <span class="onoffswitch">
                                                                 <input type="checkbox"  class="onoffswitch-checkbox" id="st3"/>
@@ -1124,42 +1124,40 @@
                                                                 </label> 
                                                             </span>
                                                         </span>
-                                                    </div>
-                                                                
-                                                            
+                                                    </div>      
                                                 </th>
-                                                <th class="hasinput" style="width:16%">
-                                                    <input type="text" class="form-control" placeholder="Filter Office" />
+                                                <th class="hasinput" style="width:40%">
+                                                    <input type="text" class="form-control" placeholder="网络标题" />
                                                 </th>
-                                                <th class="hasinput" style="width:17%">
-                                                    <input type="text" class="form-control" placeholder="Filter Age" />
+                                                <th class="hasinput" style="width:10%">
+                                                    <input type="text" class="form-control" placeholder="连接地址" />
                                                 </th>
                                                 <th class="hasinput icon-addon">
-                                                    <input id="dateselect_filter" type="text" placeholder="Filter Date" class="form-control datepicker" data-dateformat="yy/mm/dd"/>
+                                                    <input id="dateselect_filter" type="text" placeholder="收集日期" class="form-control datepicker" data-dateformat="yy/mm/dd"/>
                                                     <label for="dateselect_filter" class="glyphicon glyphicon-calendar no-margin padding-top-15" rel="tooltip" title="" data-original-title="Filter Date"></label>
                                                 </th>
-                                                <th class="hasinput" style="width:16%">
-                                                    <input type="text" class="form-control" placeholder="Filter Salary" />
+                                                <th class="hasinput" style="width:10%">
+                                                    <input type="text" class="form-control" placeholder="Flg" />
                                                 </th>
                                             </tr>
                                             <tr>
-                                                <th data-class="expand">Name</th>
-                                                <th>Position</th>
-                                                <th data-hide="phone">Office</th>
-                                                <th data-hide="phone">Age</th>
-                                                <th data-hide="phone,tablet">Start date</th>
-                                                <th data-hide="phone,tablet">Salary</th>
+                                                <th data-class="expand">ID</th>
+                                                <th>数据类型</th>
+                                                <th data-hide="phone">网络标题</th>
+                                                <th data-hide="phone">连接地址</th>
+                                                <th data-hide="phone,tablet">收集日期</th>
+                                                <th data-hide="phone,tablet">Flg</th>
                                             </tr>
                                         </thead>
             
-                                        <tbody>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2014/12/12</td>
-                                                <td>$320,800</td>
+                                        <tbody th:remove="all-but-first">
+                                            <tr th:each="item : ${uncheckRecordList}">
+                                                <td th:text="${item.id}">1</td>
+                                                <td th:text="${item.kbnName}">跳楼数据</td>
+                                                <td th:text="${item.title}">61</td>
+                                                <td th:data-url="${item.url}"><a href="" th:href="${item.url}" target="_blank">查看...</a></td>
+                                                <td th:text="${item.reportdate}">2014/12/12</td>
+                                                <td th:text="${item.checkflg}">0</td>
                                             </tr>
                                             <tr>
                                                 <td>Garrett Winters</td>
@@ -3590,7 +3588,13 @@
         </script>
     
 </body>
+    <script type="text/javascript" th:inline="javascript">
+    /*<![CDATA[*/
+    	var cPath=/*[[${#httpServletRequest.contextPath}]]*/;
+    /*]]>*/    
+    </script>
     <script type="text/javascript" src="../../static/js/datatable/datatable.js"
     th:src="@{/js/datatable/datatable.js}">
     </script>
+    
 </html>

@@ -4,7 +4,6 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.antec</groupId>
-	<artifactId>web</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
@@ -116,11 +115,8 @@
 		<dependency>
 		    <groupId>net.sourceforge.nekohtml</groupId>
 		    <artifactId>nekohtml</artifactId>
-		    <version>1.9.22</version>
 		</dependency>
-
-        
-        
+		
         
 		
 	</dependencies>
@@ -135,4 +131,5 @@
 	</build>
 
 
+	<artifactId>antec</artifactId>
 </project>
