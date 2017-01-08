@@ -3,6 +3,7 @@
  */
 package com.antec.web.controllers;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,8 +14,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.antec.config.SelfConfig;
 import com.antec.dao.UncheckRecordDto;
 import com.antec.service.CollectDataService;
+import com.antec.service.CsvToDatabaseService;
 import com.antec.web.base.BaseController;
 
 /**
@@ -25,6 +28,12 @@ import com.antec.web.base.BaseController;
 public class DataAnalysisController extends BaseController{
 	@Autowired
 	private CollectDataService collectDataService;
+	
+	@Autowired
+	private CsvToDatabaseService csvToDatabaseService;
+	
+	@Autowired
+	private SelfConfig selfConfig;
 	
 	/**
 	 * 
@@ -43,6 +52,9 @@ public class DataAnalysisController extends BaseController{
 			model.addAttribute("uncheckRecordList", new ArrayList<>());
 		}
 		
+		System.out.println("#############Ak---------:" + selfConfig.getAk());
+		
+		csvToDatabase();
 		return "datatables";
 	}
 	
@@ -50,6 +62,17 @@ public class DataAnalysisController extends BaseController{
 	public String showUncheckDetai(Model model,@PathVariable("id") String id) {
 		
 		return StringUtils.EMPTY;
+	}
+	
+	
+	private void csvToDatabase() {
+		String csvFile="/Users/shenzhaohong/Desktop/China_Regions.csv";
+		File file=new File(csvFile);
+		if (!file.exists()) {
+			return;
+		}
+		csvToDatabaseService.csvFileToDatabase(file);
+		
 	}
 
 }
