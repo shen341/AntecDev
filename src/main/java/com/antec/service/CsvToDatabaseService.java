@@ -21,7 +21,7 @@ import com.antec.model.mapper.AreamasterMapper;
 
 /**
  * @author shenzhaohong
- *
+ * @deprecated
  */
 @Service
 public class CsvToDatabaseService {

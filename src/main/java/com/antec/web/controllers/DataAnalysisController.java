@@ -52,9 +52,9 @@ public class DataAnalysisController extends BaseController{
 			model.addAttribute("uncheckRecordList", new ArrayList<>());
 		}
 		
-		System.out.println("#############Ak---------:" + selfConfig.getAk());
-		
-		csvToDatabase();
+//		System.out.println("#############Ak---------:" + selfConfig.getAk());
+//		
+//		csvToDatabase();
 		return "datatables";
 	}
 	
@@ -64,7 +64,9 @@ public class DataAnalysisController extends BaseController{
 		return StringUtils.EMPTY;
 	}
 	
-	
+	/**
+	 * @deprecated
+	 */
 	private void csvToDatabase() {
 		String csvFile="/Users/shenzhaohong/Desktop/China_Regions.csv";
 		File file=new File(csvFile);
