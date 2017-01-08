@@ -102,6 +102,12 @@
 <link rel="apple-touch-startup-image" href="../../static/img/splash/iphone.png"
     th:href="@{/img/splash/iphone.png}"    
 	media="screen and (max-device-width: 320px)"/>
+
+<script type="text/javascript" th:inline="javascript">
+    /*<![CDATA[*/
+        var cPath=/*[[${#httpServletRequest.contextPath}]]*/;
+    /*]]>*/    
+    </script>
 </head>
 <body>
 
