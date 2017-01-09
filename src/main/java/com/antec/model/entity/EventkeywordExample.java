@@ -255,6 +255,76 @@ public class EventkeywordExample {
             return (Criteria) this;
         }
 
+        public Criteria andKbnIsNull() {
+            addCriterion("kbn is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andKbnIsNotNull() {
+            addCriterion("kbn is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andKbnEqualTo(String value) {
+            addCriterion("kbn =", value, "kbn");
+            return (Criteria) this;
+        }
+
+        public Criteria andKbnNotEqualTo(String value) {
+            addCriterion("kbn <>", value, "kbn");
+            return (Criteria) this;
+        }
+
+        public Criteria andKbnGreaterThan(String value) {
+            addCriterion("kbn >", value, "kbn");
+            return (Criteria) this;
+        }
+
+        public Criteria andKbnGreaterThanOrEqualTo(String value) {
+            addCriterion("kbn >=", value, "kbn");
+            return (Criteria) this;
+        }
+
+        public Criteria andKbnLessThan(String value) {
+            addCriterion("kbn <", value, "kbn");
+            return (Criteria) this;
+        }
+
+        public Criteria andKbnLessThanOrEqualTo(String value) {
+            addCriterion("kbn <=", value, "kbn");
+            return (Criteria) this;
+        }
+
+        public Criteria andKbnLike(String value) {
+            addCriterion("kbn like", value, "kbn");
+            return (Criteria) this;
+        }
+
+        public Criteria andKbnNotLike(String value) {
+            addCriterion("kbn not like", value, "kbn");
+            return (Criteria) this;
+        }
+
+        public Criteria andKbnIn(List<String> values) {
+            addCriterion("kbn in", values, "kbn");
+            return (Criteria) this;
+        }
+
+        public Criteria andKbnNotIn(List<String> values) {
+            addCriterion("kbn not in", values, "kbn");
+            return (Criteria) this;
+        }
+
+        public Criteria andKbnBetween(String value1, String value2) {
+            addCriterion("kbn between", value1, value2, "kbn");
+            return (Criteria) this;
+        }
+
+        public Criteria andKbnNotBetween(String value1, String value2) {
+            addCriterion("kbn not between", value1, value2, "kbn");
+            return (Criteria) this;
+        }
+
         public Criteria andKeywordIsNull() {
             addCriterion("keyword is null");
             return (Criteria) this;

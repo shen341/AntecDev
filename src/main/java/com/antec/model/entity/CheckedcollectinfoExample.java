@@ -586,6 +586,136 @@ public class CheckedcollectinfoExample {
             return (Criteria) this;
         }
 
+        public Criteria andEventaddressidIsNull() {
+            addCriterion("eventAddressId is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEventaddressidIsNotNull() {
+            addCriterion("eventAddressId is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEventaddressidEqualTo(Integer value) {
+            addCriterion("eventAddressId =", value, "eventaddressid");
+            return (Criteria) this;
+        }
+
+        public Criteria andEventaddressidNotEqualTo(Integer value) {
+            addCriterion("eventAddressId <>", value, "eventaddressid");
+            return (Criteria) this;
+        }
+
+        public Criteria andEventaddressidGreaterThan(Integer value) {
+            addCriterion("eventAddressId >", value, "eventaddressid");
+            return (Criteria) this;
+        }
+
+        public Criteria andEventaddressidGreaterThanOrEqualTo(Integer value) {
+            addCriterion("eventAddressId >=", value, "eventaddressid");
+            return (Criteria) this;
+        }
+
+        public Criteria andEventaddressidLessThan(Integer value) {
+            addCriterion("eventAddressId <", value, "eventaddressid");
+            return (Criteria) this;
+        }
+
+        public Criteria andEventaddressidLessThanOrEqualTo(Integer value) {
+            addCriterion("eventAddressId <=", value, "eventaddressid");
+            return (Criteria) this;
+        }
+
+        public Criteria andEventaddressidIn(List<Integer> values) {
+            addCriterion("eventAddressId in", values, "eventaddressid");
+            return (Criteria) this;
+        }
+
+        public Criteria andEventaddressidNotIn(List<Integer> values) {
+            addCriterion("eventAddressId not in", values, "eventaddressid");
+            return (Criteria) this;
+        }
+
+        public Criteria andEventaddressidBetween(Integer value1, Integer value2) {
+            addCriterion("eventAddressId between", value1, value2, "eventaddressid");
+            return (Criteria) this;
+        }
+
+        public Criteria andEventaddressidNotBetween(Integer value1, Integer value2) {
+            addCriterion("eventAddressId not between", value1, value2, "eventaddressid");
+            return (Criteria) this;
+        }
+
+        public Criteria andPickedaddressIsNull() {
+            addCriterion("pickedAddress is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPickedaddressIsNotNull() {
+            addCriterion("pickedAddress is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPickedaddressEqualTo(String value) {
+            addCriterion("pickedAddress =", value, "pickedaddress");
+            return (Criteria) this;
+        }
+
+        public Criteria andPickedaddressNotEqualTo(String value) {
+            addCriterion("pickedAddress <>", value, "pickedaddress");
+            return (Criteria) this;
+        }
+
+        public Criteria andPickedaddressGreaterThan(String value) {
+            addCriterion("pickedAddress >", value, "pickedaddress");
+            return (Criteria) this;
+        }
+
+        public Criteria andPickedaddressGreaterThanOrEqualTo(String value) {
+            addCriterion("pickedAddress >=", value, "pickedaddress");
+            return (Criteria) this;
+        }
+
+        public Criteria andPickedaddressLessThan(String value) {
+            addCriterion("pickedAddress <", value, "pickedaddress");
+            return (Criteria) this;
+        }
+
+        public Criteria andPickedaddressLessThanOrEqualTo(String value) {
+            addCriterion("pickedAddress <=", value, "pickedaddress");
+            return (Criteria) this;
+        }
+
+        public Criteria andPickedaddressLike(String value) {
+            addCriterion("pickedAddress like", value, "pickedaddress");
+            return (Criteria) this;
+        }
+
+        public Criteria andPickedaddressNotLike(String value) {
+            addCriterion("pickedAddress not like", value, "pickedaddress");
+            return (Criteria) this;
+        }
+
+        public Criteria andPickedaddressIn(List<String> values) {
+            addCriterion("pickedAddress in", values, "pickedaddress");
+            return (Criteria) this;
+        }
+
+        public Criteria andPickedaddressNotIn(List<String> values) {
+            addCriterion("pickedAddress not in", values, "pickedaddress");
+            return (Criteria) this;
+        }
+
+        public Criteria andPickedaddressBetween(String value1, String value2) {
+            addCriterion("pickedAddress between", value1, value2, "pickedaddress");
+            return (Criteria) this;
+        }
+
+        public Criteria andPickedaddressNotBetween(String value1, String value2) {
+            addCriterion("pickedAddress not between", value1, value2, "pickedaddress");
+            return (Criteria) this;
+        }
+
         public Criteria andLongitudeIsNull() {
             addCriterion("longitude is null");
             return (Criteria) this;

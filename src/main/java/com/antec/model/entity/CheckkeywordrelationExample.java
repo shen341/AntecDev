@@ -313,6 +313,66 @@ public class CheckkeywordrelationExample {
             addCriterion("checkedId not between", value1, value2, "checkedid");
             return (Criteria) this;
         }
+
+        public Criteria andKeywordidIsNull() {
+            addCriterion("keywordId is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeywordidIsNotNull() {
+            addCriterion("keywordId is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeywordidEqualTo(Integer value) {
+            addCriterion("keywordId =", value, "keywordid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeywordidNotEqualTo(Integer value) {
+            addCriterion("keywordId <>", value, "keywordid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeywordidGreaterThan(Integer value) {
+            addCriterion("keywordId >", value, "keywordid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeywordidGreaterThanOrEqualTo(Integer value) {
+            addCriterion("keywordId >=", value, "keywordid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeywordidLessThan(Integer value) {
+            addCriterion("keywordId <", value, "keywordid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeywordidLessThanOrEqualTo(Integer value) {
+            addCriterion("keywordId <=", value, "keywordid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeywordidIn(List<Integer> values) {
+            addCriterion("keywordId in", values, "keywordid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeywordidNotIn(List<Integer> values) {
+            addCriterion("keywordId not in", values, "keywordid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeywordidBetween(Integer value1, Integer value2) {
+            addCriterion("keywordId between", value1, value2, "keywordid");
+            return (Criteria) this;
+        }
+
+        public Criteria andKeywordidNotBetween(Integer value1, Integer value2) {
+            addCriterion("keywordId not between", value1, value2, "keywordid");
+            return (Criteria) this;
+        }
     }
 
     /**
