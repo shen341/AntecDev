@@ -129,13 +129,18 @@
                  
                                                 <!--8.occurdate -->   
                                                 <div class="row">
-	                                                <section class="col ">
+	                                                 <section class="col col-4">
 	                                                    <label class="label">发生日期</label>
-	                                                    <div class="hasinput icon-addon">
-		                                                    <input id="dateselect_filter" type="text" name="occurDate" th:field="*{occurDate}"  class="form-control datepicker" data-dateformat="yy/mm/dd">
-		                                                    <label for="dateselect_filter" class="glyphicon glyphicon-calendar no-margin padding-top-5" ></label>
-		                                                </div>
-	                                                </section> 
+				                                        <label class="input"> 
+				                                            <i class="icon-append fa fa-calendar" style="top: 0px;"></i>
+				                                            <input type="text" name="occurDate" th:field="*{occurDate}"  placeholder="" class="input-xs datepicker" data-dateformat='yy/mm/dd'>
+				                                        </label>
+				                                    </section>
+	                                                <section class="col col-4">
+	                                                   <label class="label">日期类型</label>
+                                                        <label class="checkbox state-success">
+                                                        <input type="checkbox" name="checkbox"><i></i>模糊时间</label>
+	                                                </section>
                                                 </div>
                                                 <!--9.eventSummary -->                                              
                                                 <section>
@@ -154,16 +159,16 @@
                                                 
                                                 <!--11.longitude --> 
                                                 <div class="row">                                             
-	                                                <section class="col col-6">
+	                                                <section class="col col-4">
 	                                                    <label class="label">经度</label>
 	                                                    <label class="input">
-	                                                        <input type="text" id="longitude" name="longitude" class="input-xs"  th:field="*{longitude}"/>
+	                                                        <input type="text" id="longitude" name="longitude" class="input-xs"  style="color: #999;"  th:field="*{longitude}" disabled/>
 	                                                    </label>
 	                                                </section> 
-	                                                <section class="col col-6">
+	                                                <section class="col col-4">
 	                                                   <label class="label">纬度</label>
                                                         <label class="input">
-                                                            <input type="text" id="latitude" name="latitude" th:field="*{latitude}" class="input-xs"  />
+                                                            <input type="text" id="latitude" name="latitude" th:field="*{latitude}" class="input-xs" style="color: #999;" disabled />
                                                         </label>
 	                                                </section>
                                                 </div>
@@ -171,69 +176,74 @@
                                                 <!-- 12.credibility -->
                                                 <!-- $('#stars-rating-4').prop('checked',true) 
                                                      $('#stars-rating-4').prop('checked') -->
-                                                <section>
-                                                   <label class="label">可信度</label>
-                                                    <div class="rating">
-                                                        <input type="radio" name="stars-rating" id="stars-rating-5">
-                                                        <label for="stars-rating-5"><i class="fa fa-star"></i></label>
-                                                        <input type="radio" name="stars-rating" id="stars-rating-4">
-                                                        <label for="stars-rating-4"><i class="fa fa-star"></i></label>
-                                                        <input type="radio" name="stars-rating" id="stars-rating-3">
-                                                        <label for="stars-rating-3"><i class="fa fa-star"></i></label>
-                                                        <input type="radio" name="stars-rating" id="stars-rating-2">
-                                                        <label for="stars-rating-2"><i class="fa fa-star"></i></label>
-                                                        <input type="radio" name="stars-rating" id="stars-rating-1">
-                                                        <label for="stars-rating-1"><i class="fa fa-star"></i></label>
-                                                        Stars
-                                                    </div>
+                                                <div class="row">
+	                                                <section class="col col-4">
+	                                                   <label class="label">可信度</label>
+	                                                    <div class="rating">
+	                                                        <input type="radio" name="stars-rating" id="stars-rating-5">
+	                                                        <label for="stars-rating-5"><i class="fa fa-star"></i></label>
+	                                                        <input type="radio" name="stars-rating" id="stars-rating-4">
+	                                                        <label for="stars-rating-4"><i class="fa fa-star"></i></label>
+	                                                        <input type="radio" name="stars-rating" id="stars-rating-3">
+	                                                        <label for="stars-rating-3"><i class="fa fa-star"></i></label>
+	                                                        <input type="radio" name="stars-rating" id="stars-rating-2">
+	                                                        <label for="stars-rating-2"><i class="fa fa-star"></i></label>
+	                                                        <input type="radio" name="stars-rating" id="stars-rating-1">
+	                                                        <label for="stars-rating-1"><i class="fa fa-star"></i></label>
+	                                                        Stars
+	                                                    </div>
+	                                                
+	                                                </section>
+                                                </div>
                                                 
-                                                </section>
-                                                
-                                                <!-- 12.地址关键字 use for pickup -->
-                                                <section>
-                                                    <label class="label">地址关键字(pickup)</label>
-                                                    <label class="textarea">                                        
-                                                        <textarea rows="2" class="custom-scroll" name="addressKeyWord" th:field="*{addressKeyWord}" ></textarea> 
-                                                    </label>
-                                                    <div class="note">
-                                                        <strong>Note:</strong> 多个关键字时，请用逗号分开！
-                                                    </div>
-                                                </section>
-                                                <!-- 13.发生日期关键字 use for pickup -->
-                                                <section>
-                                                    <label class="label">发生日期关键字(pickup)</label>
-                                                    <label class="textarea">                                        
-                                                        <textarea rows="2" class="custom-scroll" name="occurDateKeyWord" th:field="*{occurDateKeyWord}" ></textarea> 
-                                                    </label>
-                                                    <div class="note">
-                                                        <strong>Note:</strong> 多个关键字时，请用逗号分开！
-                                                    </div>
-                                                </section>
-                                                <!-- 14.概述 关键字 use for pickup -->
-                                                <section>
-                                                    <label class="label">概述关键字(pickup)</label>
-                                                    <label class="textarea">                                        
-                                                        <textarea rows="2" class="custom-scroll" name="summaryKeyWord" th:field="*{summaryKeyWord}" ></textarea> 
-                                                    </label>
-                                                    <div class="note">
-                                                        <strong>Note:</strong> 多个关键字时，请用逗号分开！
-                                                    </div>
-                                                </section>           
-                                                <section>
-                                                    <label class="label">Small text input</label>
-                                                    <label class="input">
-                                                        <input type="text" class="input-sm">
-                                                    </label>
-                                                </section>
+                                                <div class="row">
+	                                                <!-- 12.地址关键字 use for pickup -->
+	                                                <section class="col col-4">
+	                                                    <label class="label">地址关键字(pickup)</label>
+	                                                    <label class="textarea">                                        
+	                                                        <textarea rows="2" class="custom-scroll" name="addressKeyWord" th:field="*{addressKeyWord}" ></textarea> 
+	                                                    </label>
+	                                                    <div class="note">
+	                                                        <strong>Note:</strong> 多个关键字时，请用逗号分开！
+	                                                    </div>
+	                                                </section>
+	                                                <!-- 13.发生日期关键字 use for pickup -->
+	                                                <section class="col col-4">
+	                                                    <label class="label">发生日期关键字(pickup)</label>
+	                                                    <label class="textarea">                                        
+	                                                        <textarea rows="2" class="custom-scroll" name="occurDateKeyWord" th:field="*{occurDateKeyWord}" ></textarea> 
+	                                                    </label>
+	                                                    <div class="note">
+	                                                        <strong>Note:</strong> 多个关键字时，请用逗号分开！
+	                                                    </div>
+	                                                </section>
+	                                                <!-- 14.概述 关键字 use for pickup -->
+	                                                <section class="col col-4">
+	                                                    <label class="label">概述关键字(pickup)</label>
+	                                                    <label class="textarea">                                        
+	                                                        <textarea rows="2" class="custom-scroll" name="summaryKeyWord" th:field="*{summaryKeyWord}" ></textarea> 
+	                                                    </label>
+	                                                    <div class="note">
+	                                                        <strong>Note:</strong> 多个关键字时，请用逗号分开！
+	                                                    </div>
+	                                                </section>  
+                                                </div>         
                                             </fieldset>
   
                                              <footer>
-                                                <button type="submit" class="btn btn-primary">
-                                                    确定
-                                                </button>
-                                                <button type="button" class="btn btn-default" onclick="window.history.back();">
-                                                    返回
-                                                </button>
+                                                <div class="row">
+                                                    <div class="col col-4">
+                                                      <button type="submit" class="btn btn-primary">
+                                                        确定
+                                                       </button>
+                                                    </div>
+                                                    <div class="col col-4">
+														<button type="button" class="btn btn-default" onclick="window.history.back();">
+														                                                        返回
+														                                                    </button>
+                                                    </div>
+	                                                
+                                                </div>
                                             </footer>
                                         </form>
                 
