@@ -76,173 +76,187 @@
                 
                                     <!-- widget content -->
                                     <div class="widget-body no-padding">
-                
-                                        <form class="smart-form" action="" th:object="${checkFormData}" method="post">
-                                            <header>
-                                                待确认数据 
+                                        <form class="smart-form" action="" th:object="${checkFormData}" method="post" name="formDataCheck">
+                                            <header>待确认数据 
                                             </header>
                 
                                             <fieldset>
                                                 <!--1.collectedid  -->
                                                 <input type="hidden" name="collectId" th:field="*{collectId}"/>
-                                                <!--2.title --> 
-                                                <section>
-                                                    <label class="label">爬虫标题</label>
-                                                    <label class="input">
-                                                        <input type="text" class="input-xs" disabled="disabled" th:field="*{title}"/>
-                                                    </label>
-                                                </section>
                                                 
-                                                <!--3.url --> 
-                                                <section>
-                                                    <label class="label">爬虫网址</label>
-                                                    <label class="label">
-                                                        <a href="" th:href="*{url}" th:text="*{url}">http://www.example.com</a>
-                                                    </label>
-                                                </section>
+                                                <div class="row">
+                                                    <!--2.title --> 
+                                                    <section class="col col-4">
+                                                        <label class="label">爬虫标题</label>
+                                                        <label class="input">
+                                                            <input type="text" class="input-md" disabled="disabled" th:field="*{title}"  style="color: #999;" />
+                                                        </label>
+                                                    </section>
+                                                    
+                                                    <!--3.url --> 
+                                                    <section class="col col-4">
+                                                        <label class="label">爬虫网址</label>
+                                                        <label class="label">
+                                                            <a target="_blank" href="" th:href="*{url}" th:text="*{url}">http://www.example.com</a>
+                                                        </label>
+                                                    </section>   
+                                                    <!--4.kindKbn --> 
+                                                    <section class="col col-4">
+                                                        <label class="label">数据类型</label>
+                                                        <label class="input">
+                                                            <input type="text" class="input-md" disabled="disabled" th:field="*{envetKbnName}"  style="color: #999;" />
+                                                        </label>
+                                                    </section>
+                                                                                                 
+                                                </div>
                                                 
-                                                <!--4.kindKbn --> 
-                                                <section>
-                                                    <label class="label">数据类型</label>
-                                                    <label class="input">
-                                                        <input type="text" class="input-xs" disabled="disabled" th:field="*{envetKbnName}"/>
-                                                    </label>
-                                                </section>
-                                                
-                                                <!--5.checked id --> 
-                                                <input type="hidden" name="checkedId" th:field="*{checkedId}"/>
-                                                
-                                                <!--6.modifyKbn --> 
-                                                <section>
-                                                    <label class="label">数据类型(修改)</label>
-                                                    <label class="input">
-                                                        <input type="text" name="modifyKbn" class="input-xs"  th:field="*{modifyKbn}"/>
-                                                    </label>
-                                                </section>
-                                                <!--7.modifyurl --> 
-                                                <section>
-                                                    <label class="label">URL修改</label>
-                                                    <label class="input">
-                                                        <input type="text" name="modifyUrl" class="input-xs"  th:field="*{modifyUrl}"/>
-                                                    </label>
-                                                </section>                                                
+                                                <hr class="line-style"/>
+
+                                                <div class="row">
+                                                    <!--5.checked id --> 
+                                                    <input type="hidden" name="checkedId" th:field="*{checkedId}"/>
+                                                    <!-- /*
+                                                    <div class="col-md-3">
+                                                        <select id="jobId" name="jobId">
+                                                            <option th:each="job : ${jobList}" th:value="${job.id}" th:selected="${job.id == id}" th:inline="text">[[${job.name}]]</option>
+                                                        </select>
+                                                    </div>
+                                                    */ -->
+                                                    
+                                                    <!--6.modifyKbn --> 
+                                                    <section class="col col-4">
+                                                        <label class="label">数据类型(修改)</label>
+                                                        <label class="select">
+                                                            <select class="input-md" name="modifyKbn">
+                                                                <option  disabled selected>选择数据类型</option>
+                                                                <option th:each="dataType: ${dataTyleList}" th:value="${dataType.code}" th:selected="${dataType.code} ==*{modifyKbn}" th:text="${dataType.name}"></option>
+                                                            </select>
+                                                        </label>
+                                                    </section>
+                                                    <!--7.modifyurl --> 
+                                                    <section class="col col-4">
+                                                        <label class="label">URL修改</label>
+                                                        <label class="input">
+                                                            <input type="text" name="modifyUrl" class="input-md"  th:field="*{modifyUrl}"/>
+                                                        </label>
+                                                    </section>                                                  
+                                                </div>
+                                              
                  
                                                 <!--8.occurdate -->   
                                                 <div class="row">
-	                                                 <section class="col col-4">
-	                                                    <label class="label">发生日期</label>
-				                                        <label class="input"> 
-				                                            <i class="icon-append fa fa-calendar" style="top: 0px;"></i>
-				                                            <input type="text" name="occurDate" th:field="*{occurDate}"  placeholder="" class="input-xs datepicker" data-dateformat='yy/mm/dd'>
-				                                        </label>
-				                                    </section>
-	                                                <section class="col col-4">
-	                                                   <label class="label">日期类型</label>
+                                                     <section class="col col-4">
+                                                        <label class="label">发生日期</label>
+                                                        <label class="input"> 
+                                                            <i class="icon-append fa fa-calendar"></i>
+                                                            <input type="text" name="occurDate" th:field="*{occurDate}"  placeholder="" class="input-md datepicker" data-dateformat='yy/mm/dd'>
+                                                        </label>
+                                                    </section>
+                                                    <section class="col col-3">
+                                                       <label class="label">日期类型</label>
                                                         <label class="checkbox state-success">
                                                         <input type="checkbox" name="checkbox"><i></i>模糊时间</label>
-	                                                </section>
+                                                    </section>
                                                 </div>
                                                 <!--9.eventSummary -->                                              
                                                 <section>
                                                     <label class="label">事件概述</label>
                                                     <label class="input">
-                                                        <input type="text" name="eventSummary" class="input-xs"  th:field="*{eventSummary}" maxlength="40"/>
+                                                        <input type="text" name="eventSummary" class="input-md"  th:field="*{eventSummary}" maxlength="40"/>
                                                     </label>
                                                 </section>  
                                                 <!--10.pickedAddress -->                                              
                                                 <section>
                                                     <label class="label">事件地址</label>
                                                     <label class="input">
-                                                        <input type="text" name="eventSummary" class="input-xs"  th:field="*{eventSummary}" maxlength="60"/>
+                                                        <input type="text" name="eventSummary" class="input-md"  th:field="*{eventSummary}" maxlength="60"/>
                                                     </label>
                                                 </section>  
                                                 
                                                 <!--11.longitude --> 
                                                 <div class="row">                                             
-	                                                <section class="col col-4">
-	                                                    <label class="label">经度</label>
-	                                                    <label class="input">
-	                                                        <input type="text" id="longitude" name="longitude" class="input-xs"  style="color: #999;"  th:field="*{longitude}" disabled/>
-	                                                    </label>
-	                                                </section> 
-	                                                <section class="col col-4">
-	                                                   <label class="label">纬度</label>
+                                                    <section class="col col-4">
+                                                        <label class="label">经度</label>
                                                         <label class="input">
-                                                            <input type="text" id="latitude" name="latitude" th:field="*{latitude}" class="input-xs" style="color: #999;" disabled />
+                                                            <input type="text" id="longitude" name="longitude" class="input-md"  style="color: #999;"  th:field="*{longitude}" disabled/>
                                                         </label>
-	                                                </section>
+                                                    </section> 
+                                                    <section class="col col-4">
+                                                       <label class="label">纬度</label>
+                                                        <label class="input">
+                                                            <input type="text" id="latitude" name="latitude" th:field="*{latitude}" class="input-md" style="color: #999;" disabled />
+                                                        </label>
+                                                    </section>
                                                 </div>
                                                 
                                                 <!-- 12.credibility -->
                                                 <!-- $('#stars-rating-4').prop('checked',true) 
                                                      $('#stars-rating-4').prop('checked') -->
                                                 <div class="row">
-	                                                <section class="col col-4">
-	                                                   <label class="label">可信度</label>
-	                                                    <div class="rating">
-	                                                        <input type="radio" name="stars-rating" id="stars-rating-5">
-	                                                        <label for="stars-rating-5"><i class="fa fa-star"></i></label>
-	                                                        <input type="radio" name="stars-rating" id="stars-rating-4">
-	                                                        <label for="stars-rating-4"><i class="fa fa-star"></i></label>
-	                                                        <input type="radio" name="stars-rating" id="stars-rating-3">
-	                                                        <label for="stars-rating-3"><i class="fa fa-star"></i></label>
-	                                                        <input type="radio" name="stars-rating" id="stars-rating-2">
-	                                                        <label for="stars-rating-2"><i class="fa fa-star"></i></label>
-	                                                        <input type="radio" name="stars-rating" id="stars-rating-1">
-	                                                        <label for="stars-rating-1"><i class="fa fa-star"></i></label>
-	                                                        Stars
-	                                                    </div>
-	                                                
-	                                                </section>
+                                                    <section class="col col-4">
+                                                       <label class="label">可信度</label>
+                                                        <div class="rating">
+                                                            <input type="radio" name="stars-rating" id="stars-rating-5">
+                                                            <label for="stars-rating-5"><i class="fa fa-star"></i></label>
+                                                            <input type="radio" name="stars-rating" id="stars-rating-4">
+                                                            <label for="stars-rating-4"><i class="fa fa-star"></i></label>
+                                                            <input type="radio" name="stars-rating" id="stars-rating-3">
+                                                            <label for="stars-rating-3"><i class="fa fa-star"></i></label>
+                                                            <input type="radio" name="stars-rating" id="stars-rating-2">
+                                                            <label for="stars-rating-2"><i class="fa fa-star"></i></label>
+                                                            <input type="radio" name="stars-rating" id="stars-rating-1">
+                                                            <label for="stars-rating-1"><i class="fa fa-star"></i></label>
+                                                            Stars
+                                                        </div>
+                                                    
+                                                    </section>
                                                 </div>
                                                 
                                                 <div class="row">
-	                                                <!-- 12.地址关键字 use for pickup -->
-	                                                <section class="col col-4">
-	                                                    <label class="label">地址关键字(pickup)</label>
-	                                                    <label class="textarea">                                        
-	                                                        <textarea rows="2" class="custom-scroll" name="addressKeyWord" th:field="*{addressKeyWord}" ></textarea> 
-	                                                    </label>
-	                                                    <div class="note">
-	                                                        <strong>Note:</strong> 多个关键字时，请用逗号分开！
-	                                                    </div>
-	                                                </section>
-	                                                <!-- 13.发生日期关键字 use for pickup -->
-	                                                <section class="col col-4">
-	                                                    <label class="label">发生日期关键字(pickup)</label>
-	                                                    <label class="textarea">                                        
-	                                                        <textarea rows="2" class="custom-scroll" name="occurDateKeyWord" th:field="*{occurDateKeyWord}" ></textarea> 
-	                                                    </label>
-	                                                    <div class="note">
-	                                                        <strong>Note:</strong> 多个关键字时，请用逗号分开！
-	                                                    </div>
-	                                                </section>
-	                                                <!-- 14.概述 关键字 use for pickup -->
-	                                                <section class="col col-4">
-	                                                    <label class="label">概述关键字(pickup)</label>
-	                                                    <label class="textarea">                                        
-	                                                        <textarea rows="2" class="custom-scroll" name="summaryKeyWord" th:field="*{summaryKeyWord}" ></textarea> 
-	                                                    </label>
-	                                                    <div class="note">
-	                                                        <strong>Note:</strong> 多个关键字时，请用逗号分开！
-	                                                    </div>
-	                                                </section>  
+                                                    <!-- 12.地址关键字 use for pickup -->
+                                                    <section class="col col-4">
+                                                        <label class="label">地址关键字(pickup)</label>
+                                                        <label class="textarea">                                        
+                                                            <textarea rows="2" class="custom-scroll" name="addressKeyWord" th:field="*{addressKeyWord}" ></textarea> 
+                                                        </label>
+                                                        <div class="note">
+                                                            <strong>Note:</strong> 多个关键字时，请用逗号分开！
+                                                        </div>
+                                                    </section>
+                                                    <!-- 13.发生日期关键字 use for pickup -->
+                                                    <section class="col col-4">
+                                                        <label class="label">发生日期关键字(pickup)</label>
+                                                        <label class="textarea">                                        
+                                                            <textarea rows="2" class="custom-scroll" name="occurDateKeyWord" th:field="*{occurDateKeyWord}" ></textarea> 
+                                                        </label>
+                                                        <div class="note">
+                                                            <strong>Note:</strong> 多个关键字时，请用逗号分开！
+                                                        </div>
+                                                    </section>
+                                                    <!-- 14.概述 关键字 use for pickup -->
+                                                    <section class="col col-4">
+                                                        <label class="label">概述关键字(pickup)</label>
+                                                        <label class="textarea">                                        
+                                                            <textarea rows="2" class="custom-scroll" name="summaryKeyWord" th:field="*{summaryKeyWord}" ></textarea> 
+                                                        </label>
+                                                        <div class="note">
+                                                            <strong>Note:</strong> 多个关键字时，请用逗号分开！
+                                                        </div>
+                                                    </section>  
                                                 </div>         
                                             </fieldset>
   
                                              <footer>
                                                 <div class="row">
                                                     <div class="col col-4">
-                                                      <button type="submit" class="btn btn-primary">
-                                                        确定
+                                                      <button type="submit" class="btn btn-primary">确定
                                                        </button>
                                                     </div>
                                                     <div class="col col-4">
-														<button type="button" class="btn btn-default" onclick="window.history.back();">
-														                                                        返回
-														                                                    </button>
+                                                        <button type="button" class="btn btn-default" onclick="window.history.back();">   返回
+                                                        </button>
                                                     </div>
-	                                                
+                                                    
                                                 </div>
                                             </footer>
                                         </form>
@@ -283,7 +297,7 @@
     
 </body>
 
-    <script type="text/javascript" src="../../static/js/antec/datatable.js"
-    th:src="@{/js/antec/datatable.js}">
+    <script type="text/javascript" src="../../static/js/antec/uncheckDetail.js"
+    th:src="@{/js/antec/uncheckDetail.js}">
     </script>
 </html>
